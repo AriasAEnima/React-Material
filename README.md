@@ -2,6 +2,9 @@
   <a href="https://material-ui.com/" rel="noopener" target="_blank"><img width="150" src="https://material-ui.com/static/logo.svg" alt="Material-UI logo"></a></p>
 </p>
 
+# Lab 2 IETI
+
+## user: eduardo , password : clave
 <h1 align="center">1.2 React Material</h1>
 
 [![npm](https://img.shields.io/badge/npm-v6.13.4-red.svg)](https://www.npmjs.com/)
@@ -146,9 +149,9 @@ Read more about how to organize your components [here] (https://reactjs.org/docs
 4. Add the Login component to the `App.js` render method in order to test your login component.
 
 
-## Part 2: Enable App Navigation 
+## Part 2: Enable App Navigation
 
-1. Refactor your `App.js`. 
+1. Refactor your `App.js`.
     * Create a new file called `TodoApp.js` under the `components` folder and extract all the logic of the Todo App into this file.
     * Move the rest of the files related to the TodoApp component into the `components` folder.
     * Change the Todo components to use react Material elements: Button, TextField, Card and DatePickers.
@@ -162,7 +165,7 @@ Read more about how to organize your components [here] (https://reactjs.org/docs
 ```javascript
    npm install
 ```
-        
+
 3. Create a constant for each View (Login and TodoApp) in the App.js file:
 
 ```javascript
@@ -239,7 +242,7 @@ localStorage.setItem('key', value);
 localStorage.getItem('key');
 
 ```
-  
+
 1. Use the local storage to store a default user (username and password).
 
 2. Add the click handler to Sign In button in order to verify that the user exists (use the one saved on the *localStorage*)
@@ -249,5 +252,4 @@ This will prevent the user authentication every time!
 
 4. Run the application and then stop the server and verify the data is persisted.
 
-Tip: You can use the Google Chrome Developer tools under the Application tab to explore the Local Storage. 
-   
+Tip: You can use the Google Chrome Developer tools under the Application tab to explore the Local Storage.

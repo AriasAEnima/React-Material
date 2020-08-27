@@ -14,6 +14,9 @@ const TodoAppView = () => (
       <TodoApp/>
 );
 
+localStorage.setItem('username','eduardo');
+localStorage.setItem('password','clave');
+
 class App extends Component {
 
 
@@ -31,18 +34,11 @@ class App extends Component {
                         <img src={logo} className="App-logo" alt="logo"/>
                         <h1 className="App-title">TODO React App</h1>
                     </header>
-
                     <br/>
                     <br/>
-
-                    <ul>
-                        <li><Link to="/">Login</Link></li>
-                        <li><Link to="/todo">Todo</Link></li>
-                    </ul>
-
                     <div>
-                        <Route exact path="/" component={LoginView}/>
-                        <Route path="/todo" component={TodoAppView}/>
+                        {!localStorage.getItem('isLoggedIn')?
+                          <Route path="/" component={LoginView}/> : <Route path="/" component={TodoAppView}/>  }
                     </div>
                 </div>
             </Router>

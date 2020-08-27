@@ -20,11 +20,7 @@ class TodoApp extends Component{
 
       return (
           <div className="App">
-              <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo"/>
-                  <h1 className="App-title">TODO React App</h1>
-              </header>
-
+      
               <br/>
               <br/>
               <form onSubmit={this.handleSubmit} className="todo-form">

@@ -12,6 +12,29 @@ import './Login.css';
 
 
 export class Login extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state={username: '',password: ''}
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+      this.setState({ [e.target.name]: e.target.value });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log('Eaaaaaaaaaa');
+        if(localStorage.getItem('username')==this.state.username){
+            console.log(localStorage.getItem('username'));
+            localStorage.setItem('isLoggedIn',true);
+            window.location.reload();
+        }else{
+            localStorage.setItem('isLoggedIn',false);
+            console.log(localStorage.getItem('username'));
+        }
+    }
 
     render(){
         return (
@@ -23,10 +46,13 @@ export class Login extends React.Component{
                             <LockIcon />
                         </Avatar>
                         <Typography variant="h2">Sign in</Typography>
-                        <form className="form">
+                        <form className="form" onSubmit={this.handleSubmit}>
                             <FormControl margin="normal" required fullWidth>
-                                <InputLabel htmlFor="email">Email Address</InputLabel>
-                                <Input id="email" name="email" autoComplete="email" autoFocus />
+                                <InputLabel htmlFor="username">Username </InputLabel>
+                                <Input id="username" name="username" autoComplete="username" autoFocus
+                                onChange={this.handleChange}
+                                value={this.state.username}
+                                />
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="password">Password</InputLabel>
@@ -34,6 +60,8 @@ export class Login extends React.Component{
                                     name="password"
                                     type="password"
                                     id="password"
+                                    onChange={this.handleChange}
+                                    value={this.state.password}
                                     autoComplete="current-password"
                                 />
                             </FormControl>
